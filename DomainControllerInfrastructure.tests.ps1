@@ -1,3 +1,4 @@
+# These can possibly be stripped out if a control script is used. 
 $DC01 = ''
 $DC02 = ''
 Describe -Name 'Domain Controller Infrastructure Test' -Tags 'Infrastructure,Domain Controllers' {
@@ -106,5 +107,25 @@ Describe -Name 'Domain Controller Infrastructure Test' -Tags 'Infrastructure,Dom
         }
 
     }
+    Context -Name "Replication Status" {
+
+        It -Name "Last Replication Result for $DC01 is 0 (Success)" {
+
+            $RepResult = Get-ADReplicationPartnerMetaData -Target "$DC01" -PartnerType Both -Partition *
+            # using $null because success is 0, and that is considered a null value
+            $RepResult.LastReplicationResult | Should -BeExactly $null
+
+        }
+
+        It -Name "Last Replication Result for $DC02 is 0 (Success)" {
+
+            $RepResult = Get-ADReplicationPartnerMetaData -Target "$DC02" -PartnerType Both -Partition *
+            # using $null because success is 0, and that is considered a null value
+            $RepResult.LastReplicationResult | Should -BeExactly $null
+
+        }
+
+    }
+    #room for future tests if needed
 
 }
