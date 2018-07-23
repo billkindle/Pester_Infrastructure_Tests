@@ -25,14 +25,14 @@ Describe -Name 'Domain Controller Infrastructure Test' -Tags 'Infrastructure,Dom
 
         }
 
-        It -Name "$DC01 Netlogon Service is Running" {
+        It -Name "$DC01 ADDS Service is Running" {
 
             $NTDSsvc = Get-Service -ComputerName $DC01 -DisplayName 'Active Directory Domain Services'
             $NTDSsvc.Status | Should -BeExactly 'Running'
 
         }
 
-        It -Name "$DC01 DNS Service is Running" {
+        It -Name "$DC01 ADWS Service is Running" {
 
             $ADWSsvc = Get-Service -ComputerName $DC01 -DisplayName 'Active Directory Web Services'
             $ADWSsvc.Status | Should -BeExactly 'Running'
@@ -77,14 +77,14 @@ Describe -Name 'Domain Controller Infrastructure Test' -Tags 'Infrastructure,Dom
 
         }
 
-        It -Name "$DC02 Netlogon Service is Running" {
+        It -Name "$DC02 ADDS Service is Running" {
 
             $NTDSsvc = Get-Service -ComputerName $DC02 -DisplayName 'Active Directory Domain Services'
             $NTDSsvc.Status | Should -BeExactly 'Running'
 
         }
 
-        It -Name "$DC02 DNS Service is Running" {
+        It -Name "$DC02 ADWS Service is Running" {
 
             $ADWSsvc = Get-Service -ComputerName $DC02 -DisplayName 'Active Directory Web Services'
             $ADWSsvc.Status | Should -BeExactly 'Running'
