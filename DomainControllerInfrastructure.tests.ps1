@@ -46,7 +46,7 @@ Describe -Name 'Domain Controller Infrastructure Test' -Tags 'Infrastructure,Dom
             It -Name "$DC01 Last Replication Result is 0 (Success)" {
                 $RepResult = Get-ADReplicationPartnerMetaData -Target "$DC01" -PartnerType Both -Partition *
                 # using $null because success is 0, and that is considered a null value
-                $RepResult.LastReplicationResult | Should -BeExactly $null
+                $RepResult.LastReplicationResult | Should -BeIn $null, 0
             }
         }
         #room for future tests if needed
