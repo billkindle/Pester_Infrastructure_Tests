@@ -1,4 +1,4 @@
-# PesterInfrastructureTests
+# Pester Infrastructure Tests
 A collection of infrastructure related tests for use with Pester &amp; PowerShell.
 
 Disclaimer:
