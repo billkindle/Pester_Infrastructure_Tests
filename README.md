@@ -2,7 +2,7 @@
 A collection of infrastructure related tests for use with Pester &amp; PowerShell.
 
 
-![Image](https://raw.githubusercontent.com/EvotecIT/PesterInfrastructureTests/master/PesterAD.png)
+![Image](https://raw.githubusercontent.com/EvotecIT/PesterInfrastructureTests/Images/master/PesterAD.png)
 
 
 ```
@@ -68,5 +68,5 @@ Describing Domain Controller Infrastructure Test
         [+] CN=Schema,CN=Configuration,DC=ad,DC=evotec,DC=xyz - should have zero replication failures 8ms
         [+] DC=ForestDnsZones,DC=ad,DC=evotec,DC=xyz - should have zero replication failures 25ms
         [+] DC=ad,DC=evotec,DC=pl - should have zero replication failures 11ms
-        
+
 ```
